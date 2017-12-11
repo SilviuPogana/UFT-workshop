@@ -20,4 +20,10 @@ WpfWindow("HPE MyFlight Sample Applicatio").WpfTable("flightsDataGrid").SelectCe
 WpfWindow("HPE MyFlight Sample Applicatio").WpfButton("SELECT FLIGHT").Click
 WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("passengerName").Set "john smith"
 WpfWindow("HPE MyFlight Sample Applicatio").WpfButton("ORDER").Click
-wait(2)
+wait (2)
+Dim strOrderNo, strOrder, strReplaced
+strReplaced = WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("Order number").GetVisibleText()
+strOrder = replace(strReplaced, " ", "")
+strOrderNo = replace(strOrder, "Order", "")
+strOrderNo = replace(strOrderNo, "completed", "")
+reporter.ReportEvent micPass, "Your order number is:", strOrderNo
