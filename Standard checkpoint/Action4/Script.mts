@@ -23,7 +23,10 @@ WpfWindow("HPE MyFlight Sample Applicatio").WpfButton("ORDER").Click
 wait (2)
 Dim strOrderNo, strOrder, strReplaced
 strReplaced = WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("Order number").GetVisibleText()
-strOrder = replace(strReplaced, " ", "")
-strOrderNo = replace(strOrder, "Order", "")
+'msgbox strReplaced
+strOrderNo = replace(strReplaced, " ", "")
+'msgbox strOrderNo
+strOrderNo = replace(strOrderNo, "Order", "")
+'msgbox strOrderNo
 strOrderNo = replace(strOrderNo, "completed", "")
 reporter.ReportEvent micPass, "Your order number is:", strOrderNo
