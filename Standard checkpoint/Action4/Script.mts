@@ -22,8 +22,7 @@ WpfWindow("HPE MyFlight Sample Applicatio").WpfEdit("passengerName").Set "john s
 WpfWindow("HPE MyFlight Sample Applicatio").WpfButton("ORDER").Click
 wait (2)
 Dim strOrderNo, strReplaced
-'strReplaced = WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("Order number").GetVisibleText()
-strReplaced = WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("Order number")
+strReplaced = WpfWindow("HPE MyFlight Sample Applicatio").WpfObject("Order number").GetVisibleText()
 'msgbox strReplaced
 strOrderNo = replace(strReplaced, " ", "")
 'msgbox strOrderNo
